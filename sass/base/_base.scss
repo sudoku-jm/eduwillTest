@@ -1,0 +1,48 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 10px = 1rem
+}
+body{
+    font-family: "Noto Sans KR", "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", "Dotum", "돋움", "Gulim", "굴림", "굴림체", Sans-Serif;
+}
+ul,li,ol{
+    list-style: none;
+}
+img,fieldset{
+    border:0;
+}
+img{
+    vertical-align: top;
+}
+a,a:link{
+    text-decoration: none;
+}
+input,select,textarea,button{
+    vertical-align: middle;
+    border-radius: 0;
+    cursor: pointer;
+}
+i,em,address{
+    font-style:normal;
+}
+table { 
+    table-layout: fixed; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    empty-cells: show; 
+}
+legend, caption { 
+    line-height:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+    font-size:0;
+}
+
+

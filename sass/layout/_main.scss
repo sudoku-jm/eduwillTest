@@ -1,0 +1,818 @@
+#contents,#contents *{
+  font-family: "Roboto", "Noto Sans KR", "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", "Dotum", "돋움", "Gulim", "굴림", "굴림체", Sans-Serif !important;
+}
+
+/* 비주얼 */
+.content-visual{
+  position: relative;
+  height:95rem;
+  overflow: hidden;
+  &-bg{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  &-inner{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+  }
+  @include content-after();
+  &:after{
+    width:100%;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:rgba(0,0,0,0.6);
+    z-index: 0;
+  }
+  .float-icon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 2;
+    &.icon-no1{
+      transform: translateX(430px) translateY(-188px);
+    }
+  }
+}
+
+/* contents */
+.content-area{
+  position: relative;
+  z-index: 2;
+
+  .highlight{
+    color:$color-highlight;
+  }
+
+  //content-benefit1 혜택
+  &.content-benefit1{
+    @include list-benefit($color-white,#e7e7e7,$color-black2,$color-black9);
+    @include up-view(level1);
+  
+  }
+
+  //content-benefit-plus 혜택 플러스
+  &.content-benefit-plus{
+    position: relative;
+    margin-top:9rem;
+    padding-bottom:24rem;
+    @include content-plus(blueBg);
+    @include list-benefit(#2f47ad,#4b63c8,$color-white,#6a84f0);
+    @extend %background-reset;
+    background:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_provide.jpg");
+    @include up-view(level1);
+
+  }
+
+  //content-price 수강신청,가격
+  &.content-price{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-18rem);
+    z-index: 3;
+    @include apply-area();
+  }
+
+
+  //content-pass 
+  &.content-pass{
+    padding: 8.5rem 0 8.5rem 0;
+    background: #f8f7f0;
+    text-align: center;
+    .con-group{
+      position: relative;
+      @include list-pass();
+    }
+    .btn-reason {
+      display: inline-block;
+      padding:0 1rem 0 1rem;
+      font-size:1.4rem;
+      font-weight:400;
+      color:$color-grey-bbb;
+      letter-spacing: -.1rem;
+      @include arrow-right(small,$color-grey-bbb);
+      &:after{
+       right:0;
+      }
+    }
+  }
+
+  //content-winner
+  &.content-winner{
+    padding:10rem 0 10rem 0;
+    background: url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_winner.jpg")no-repeat;
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+    .content-area-title{
+      .tit-main{
+        display: inline-block;
+      }
+      .txt{
+        margin:0;
+        color:$color-black6;
+      }
+      .icon-feather{
+        display: inline-block;
+        vertical-align: middle;
+      }      
+    }
+    @include up-view(level1);
+
+    .con-group{
+      margin-top:-7rem;
+      @include list-winner();
+    }
+  }
+
+  //content-winner2
+  &.content-winner2{
+    @include up-view(level1);
+    .con-group{
+      position: relative;
+      margin-top:10rem;
+      height:60.2rem;
+      background-image:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/img_winners.jpg");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      transform:scale(0);
+      opacity: 0;
+      transition: all .3s .3s;
+      
+      &.on{
+        transform:scale(1);
+        opacity: 1;
+        &:before{
+          width:0;
+        }
+      }
+      &:before{
+        content:'';
+        position: absolute;
+        top:0;
+        left:0;
+        width:55%;
+        height:100%;
+        background:$color-white;
+        z-index: 1;
+        transition: all 2s 1s;
+        
+      }
+      .wrap-inner{
+        position: relative;
+        height:100%;
+        .title-level2{
+          position: relative;
+          z-index: 2;
+          transition: all .5s .3s;
+          transition-delay: 1s;
+          &.on{
+            opacity: 0;
+            transition-delay: 1s;
+          }
+        }
+        
+        .text-place{
+          position: absolute;
+          right:0;
+          bottom:0;
+          padding:2rem;
+          background:$color-black;
+          color:$color-white;
+          font-size:2rem;
+          font-weight:500;
+          text-align: center;
+          z-index: 2;
+          span{
+            margin-top:.8rem;
+            font-size:1.9rem;
+          }
+        }
+      }
+    }
+  }
+
+
+  //content-bestseller
+  &.content-bestseller{
+    padding:10rem 0;
+    .fly-item{
+      @include fly-item(rel);
+    }
+    .con-group{
+      position: relative;
+      .realtime-bestseller{
+        margin-top:6rem;
+        strong{
+          display: block;
+          font-size:4rem;
+          font-weight:500;
+          color:$color-black;
+          letter-spacing: -.1rem;
+          span{
+            color:$color-red;
+            font-weight:900;
+          }
+        }
+        p{
+          font-size:2.4rem;
+          font-weight:500;
+          color:$color-black;
+        }
+        .btn{
+          display: inline-block;
+          margin:2rem 0;
+        }
+      }
+      .con-info{
+        .text-place{
+          position: absolute;
+          right:18rem;
+          bottom:0;
+          display: inline-block;
+          line-height: 1.2;
+          font-size:4rem;
+          font-weight:900;
+          color:$color-black2;
+          text-align: center;
+          letter-spacing: -.2rem;
+          @include btn($color-white,$color-grey-bbb,$color-black9,1.4rem,$color-black9);
+        }
+     }
+    }
+  }
+
+  //content-network
+  &.content-network{
+    background: url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_networkbook.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    .wrap-inner{
+      position: relative;
+      .fly-item{
+        @include fly-item(abs);
+      }
+    }
+  }
+
+  //content-search
+  &.content-search{
+    @include content-after();
+    &:after{
+      bottom:0;
+      left:0;
+      width:100%;
+      height:30%;
+      background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(111, 111,111,0.1) 100%); 
+      z-index: -1;
+    }
+    .wrap-inner{
+      position: relative;
+      .fly-item{
+        @include fly-item(abs);
+      }
+      .con-info{
+        position: relative;
+        .typing{    
+          @include content-after();
+          display: inline-block;
+          position: absolute;
+          top:46rem;
+          left:7rem;
+          padding-right:.8rem;
+          line-height: 1;
+          font-size: 4rem;
+          font-weight:900;
+          color:$color-black2;
+          &:after{
+            top:50%;
+            right:0;
+            transform: translateY(-50%);
+            width:2px;
+            height:100%;
+            background: $color-black;
+            animation: resultTypingCharCursor .5s infinite forwards;
+          }
+        }
+      }
+    }
+  }
+
+  //content-passcount
+  &.content-passcount{
+    overflow: hidden;
+    .wrap-inner{
+      position: relative;
+      .content-area-title{
+        .btn{
+          display:inline-block;
+          margin:5rem 0 0 1rem;
+          padding:2.2rem 4.8rem;
+          background:$color-black2;
+          border-radius: .5rem;
+          overflow: hidden;
+          span{
+            display: inline-block;
+            position: relative;
+            font-size:2.2rem;
+            font-weight:700;
+            color:$color-white;
+            z-index: 2;
+          }
+          @include content-before();
+          &:before{
+            top:0;
+            left:0;
+            width:0%;
+            height:100%;
+            background: $color-highlight;
+            transition:all .2s;
+          }
+          @include content-after();
+           &:after{
+            @extend %arrow-right; 
+            width:.8rem;
+            height:.8rem;
+            border-top-width:.2rem;
+            border-right-width:.2rem;
+            border-color:$color-white;
+            z-index: 1;
+           }
+           &:hover,&:focus{
+             &:before{
+               width:100%;
+             }
+           }
+        }
+      }
+      .fly-item{
+        @include fly-item(abs);
+      }
+      .con-group{
+        @include list-review();
+
+        .text-pass-count{
+          position: absolute;
+          top:20rem;
+          right:12rem;
+          font-size:5rem;
+          font-weight:900;
+          color:#ffbf00;
+          letter-spacing: -.1rem;
+          animation: moveUpDown 1s 1s infinite;
+        }
+      }
+    }
+  }
+
+  //content-interview-title
+  &.content-interview-title{
+    background-image:linear-gradient(to right, $color-black6 0%, $color-black2 100%), url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_interview.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-blend-mode:multiply;
+    img{
+      transition:all .5s;
+      opacity: 0;
+    }
+    @include content-after();
+    &:after{
+      left:50%;
+      bottom:0;
+      transform: translateX(-50%);
+      width:25rem;
+      height:7.4rem;
+      background:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/icon_interview.png") no-repeat 0 0;
+      z-index: -1;
+      opacity: 0;
+      transition: all .5s .5s;
+      }
+      &.on{
+        background-image:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_interview.jpg");
+        background-blend-mode:normal;
+        img{
+          opacity: 1;
+        }
+        &:after{
+          opacity: 1;
+          bottom:-7.3rem;
+        }
+      }
+  }
+
+  //content-interview
+  &.content-interview{
+    padding:14rem 0 0 0;
+    @include content-after();
+    &:after{
+      bottom:0;
+      left:0;
+      width:100%;
+      height:30%;
+      background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(247,247,255,1) 100%); 
+      z-index: -1;
+    }
+    .fly-item{
+      @include fly-item(rel);
+    }
+    @include con-video-wrap();
+  }
+
+  //content-prize
+  &.content-prize{
+    overflow: hidden;
+    .wrap-inner{
+      position: relative;
+      .con-group{
+        display: flex;
+        .col{
+          width:50%;
+          .text-img{
+            position: absolute;
+            bottom:14rem;
+            font-size:1.4rem;
+            letter-spacing: -.1rem;
+            color:#898989;
+          }
+        }
+        .col:first-of-type{
+          .fly-item{
+            @include fly-item(abs);
+          }
+        }
+        .col:last-of-type{
+          .fly-item{
+            @include fly-item(rightMove);
+          }
+        }
+      }
+    }
+  }
+
+  //content-online
+  &.content-online{
+    position: relative;
+    height:38.4rem;
+    background:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_online.png")no-repeat ;
+    background-size: cover;
+    background-position:center;
+    overflow: hidden;
+    transition: all .5s;
+    &:after{
+      content:'';
+      position: absolute;
+      bottom:-.1rem;
+      right:0;
+      width:100rem;
+      height:17.8rem;
+      background:url("https://img.eduwill.net/resources/recruit/dev/front_renew/images/main/img-motif.svg") no-repeat 0 0;
+    }
+    .wrap-inner{
+      .btn{
+        display: block;
+        position: relative;
+        z-index: 3;
+      }
+      .btn-pause{
+        @include btn-pause();
+      }
+    }
+    video{
+      display:none;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translateX(-50%) translateY(-50%);
+      width:100%;
+      z-index: -1;
+    }
+    &.on{
+      height:48.4rem;
+      .btn-play{
+        display: none;
+      }
+      .btn-pause{
+        display: block;
+      }
+    }
+  }
+
+
+  //content-book
+  &.content-book{
+    .content-area-title{
+      @include btn($color-white,$color-grey-bbb,$color-black9,1.4rem,$color-black9);
+    }
+    .con-group{
+      position: relative;
+      .btn-floating{
+        position: absolute;
+        top:-18rem;
+        right:0;
+        animation: MoveShake 1s ease infinite;
+      }
+    }
+  }
+
+  //content-exam
+  &.content-exam{
+    background:#fbf8f4;
+    .con-group{
+      position: relative;
+      .btn-floating{
+        position: absolute;
+        top:-12rem;
+        right:0;
+        animation: MoveShake 1s ease infinite;
+      }
+      @include slide-info-exam();
+    }
+  }
+
+  //content-teathers
+  &.content-teathers{
+    &.on{
+      .list-teacher{
+        a{
+          animation: flipInY .8s;
+        }
+      }
+    }
+    .list-teacher{
+      display: flex;
+      margin-top:8.6rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      li{
+        width:16.66%;
+        text-align: center;
+        a{
+          display: block;
+          @include hoverFlipInY();
+        }
+      }
+    }
+    .list-teacher-sub{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      li{
+        margin-top:.6rem;
+        width:14.28%;
+        text-align: center;
+        a{
+          display: block;
+          @include hoverFlipInY();
+        }
+      }
+    }
+  }
+
+  //content-management
+  &.content-management{
+    background-color:#ebecef;
+    background : url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_management.jpg")no-repeat center top;
+    background-size: auto;
+    overflow:hidden;
+
+    @include slider-frame();
+
+    .con-group{
+      margin:8rem 0 10rem 0;
+    }
+    
+  }
+
+  //content-service
+  &.content-service{
+    .content-area-title{
+      margin-left:2.5rem;
+    }
+    @include up-view(level1);
+    .con-group{
+      position: relative;
+      margin:7rem 0;
+      @include btn($color-white,$color-black,$color-black,1.4rem,$color-black);
+      .btn{
+        position: absolute;
+        bottom: 11rem;
+        left:37rem;
+      }
+    }
+  }
+
+  //content-service-plus
+  &.content-service-plus{
+    padding:10rem 0;
+    background:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_service.jpg");
+    @include content-plus(yellowBg);
+    .wrap-inner{
+      position: relative;
+      .fly-item{
+        @include fly-item(abs);
+        top:0;
+      }
+      .con-group{
+        text-align: right;
+      }
+    }
+  }
+
+  //content-program
+  &.content-program{
+    .con-group{
+      margin-top:8rem;
+    }
+  }
+
+  //content-alumni
+  &.content-alumni{
+    background: url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_alumni.jpg")no-repeat;
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+    .con-group{
+      @include slide-alumni();
+    }
+    .con-network1{
+      position: relative;
+      margin-top:10rem;
+      .wrap-inner{
+        display: flex;
+        position: relative;
+        .col{
+          width:50%;
+        }
+        .col:first-of-type{
+          &.fly-item{
+            @include fly-item(rel);
+          }
+        }
+        .col:last-of-type{
+          padding-left:10rem;
+          &.fly-item{
+            @include fly-item(rightMove);
+            top:0;
+          }
+        }
+      }
+      .con-info{
+        position: relative;
+        text-align: center;
+        z-index: 1;
+      }
+    }
+
+    .con-network2{
+      position: relative;
+      margin-top:-15rem;
+      background:#f3f3f3;
+      .wrap-inner{
+        display: flex;
+        position: relative;
+        .col{
+          width:50%;
+        }
+        .col:first-of-type{
+          &.fly-item{
+            @include fly-item(abs);
+            top: 20rem;
+          }
+        }
+        .col:last-of-type{
+          padding-left:10rem;
+          &.fly-item{
+            @include fly-item(rightMove);
+            top:20rem;
+          }
+        }
+        @include btn($color-white,$color-black,$color-black,1.4rem,$color-black);
+        .btn{
+          margin-top:1.5rem;
+        }
+      }
+      .con-info{
+        text-align: center;
+      }
+    }
+  }
+
+  //content-alumni-plus
+  &.content-alumni-plus{
+    background-image:url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_uland.jpg");
+    background-repeat : no-repeat;
+    background-position: center top;
+    background-size:180%;
+    @include content-plus(whiteBg);
+    @include up-view(level1);
+    .con-group{
+      margin-top:6rem;
+      
+    }
+  }
+
+  //content-banner
+  &.content-banner{
+    position: relative;
+    height:29rem;
+    background-image: url("https://img.eduwill.net/eduwill/img/2021/L/product/210304/pc/bg_banner2_210419.jpg");
+    img{
+      position: absolute;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%);
+    }
+  }
+  
+  //content-apply
+  &.content-apply{
+    padding:10rem 0;
+    @include apply-area();
+    .wrap-inner-s{
+      .input-check-agree{
+        display: block;
+        margin:6rem 0 2rem 0;
+        float:right;
+        font-size:1.8rem;
+        color:$color-red;
+        text-align: right;
+        cursor: pointer;
+        letter-spacing: -.1rem;
+        input{
+          margin:0 0 .3rem .5rem;
+        }
+      }
+      .tbl-apply-info{
+        border-top:2px solid $color-black;
+        border-bottom:2px solid $color-black;
+        th,td{
+          padding:1.5rem;
+          border-bottom:1px solid #bcbcbc;
+          border-left: 1px solid #d2d2d2;
+          letter-spacing: -.1rem;
+        }
+        th{
+          background:#f5f5f5;
+          border-left:0;
+          color:$color-black;
+          font-size:1.6rem;
+          font-weight:700;
+          text-align: center;
+        }
+        td{
+          font-size:1.4rem;
+          color:$color-black3;
+          li{
+            margin-bottom:2rem;
+            
+          }
+          li:last-of-type{
+            margin-bottom:0;
+          }
+          img{
+            margin:2rem 0 0 0;
+          }
+        }
+        .color-red{
+          color:$color-red;
+        }
+     
+        @include btn-tag-button(#898989,$color-white,1.2rem,$color-white);
+        .btn{
+          display:table;
+          margin:.5rem auto 0 auto;
+        }
+        
+      }
+    }
+
+  }
+
+  //content-ending
+  &.content-ending{
+    background:url('https://img.eduwill.net/Img2/Common/slogan/pc/210713/bg_ending.jpg')no-repeat;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    text-align: center;
+    a{
+      display: block;
+      text-align: center;
+    }
+  }
+
+  //content-slogan
+  &.content-slogan{
+    border-top: 20px solid $color-grey-f1;
+    text-align: center;
+  }
+
+}
+

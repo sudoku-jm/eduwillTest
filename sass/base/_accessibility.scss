@@ -1,0 +1,9 @@
+/* 웹접근성 */
+
+/* tab키 SkipToContent*/
+#skipToContent{margin:0}
+#skipToContent a{position:absolute;left:-3000%;font-size:1.5rem;}
+#skipToContent a:focus{display:block;left:0;top:0;z-index:10000000000;width:100%;height:4rem;line-height:4rem;background:$color-black;color:$color-white;text-align:center;}
+
+/* 리더기에 읽히지만 안보이는 텍스트 */
+.hdtxt{line-height:0;width:0;height:0;font-size:0;overflow:hidden;text-indent: -9999px;}

@@ -1,0 +1,387 @@
+/* header */
+.header{
+
+    /* gnb menu */
+    .item-layer-menu{
+        display: none;
+        &.on{
+            display: block;
+        }
+        @include item-menu-position();
+        .menu-list{
+            padding:1rem 0.5rem;
+            li{
+                font-size:1.4rem;
+                a{
+                    display: block;
+                    padding:0.4rem 0.4rem 0 0.4rem;
+                    font-size:inherit;
+                    color:$color-black4;
+                    font-weight:400;
+                    text-align: left;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                &:first-of-type a{
+                    padding-top:0;
+                }
+            }
+        }
+     }
+
+    /* header-common */
+    &-common{
+        width:100%;
+        background:#f7f7f9;
+        border-top:1px solid $color-grey-e9;
+        border-bottom:1px solid $color-grey-e9;
+        &-inner{
+            &-info,&-util{
+                @include clearfix();
+            }
+            .item{
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 1;
+                & > a{
+                    display: block;
+                    padding:1.3rem 0.7rem;
+                    font-size:1.4rem;
+                    text-align: center;
+                    color:$color-black4;
+                    
+                }
+            }
+            .item-layer{
+                display: none;
+                position: absolute;
+                // top:100%;
+                background:$color-white;
+                border:1px solid $color-grey-e9;
+                z-index: 3;
+                &.on{
+                    display: block;
+                }
+                .item-box{
+                    padding:3.2rem 2.4rem;
+                    dl{
+                        padding-top:3rem;
+                        &:first-of-type{
+                            padding-top:0;
+                        }
+                        dt{
+                            font-size:1.4rem;
+                            color:#111;
+                            font-weight:500;
+                            letter-spacing: -0.5px;
+                        }
+                        dd{
+                            margin-top:13px;
+                            &>p{
+                                padding:1.9rem 0 .4rem 0;
+                                font-size:1.3rem;
+                                color:#d73706;
+                                &:first-of-type{
+                                    padding-top:0;
+                                }
+                            }
+                            ul{
+                                li{
+                                    a{
+                                        line-height: 2.2rem;
+                                        font-size:1.3rem;
+                                        font-weight:300;
+                                        color:#888;
+                                        letter-spacing: -0.5px;
+                                        &:hover{
+                                            font-weight: 500;
+                                            color:$color-black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @include appservice(33.33%,#f7f7f9);
+            }
+            .item-layer-close{
+                display: block;
+                padding:1rem 0;
+                background:#f7f7f9;
+                border-top:1px solid #ececf1;
+                font-size:1.3rem;
+                text-align: center;
+                color:$color-black;
+            }
+            /* 에듀윌로고,교육과정,직영학원 */
+            &-info{
+                display: inline-flex;
+                .item{
+                    float:left;
+                    position: relative;
+                    & > a{
+                        border-right:1px solid $color-grey-e9;
+                        padding:1.3rem 1.2rem;
+                        @include content-after();
+                    }
+                }
+                .item:last-of-type{
+                    & > a{
+                        border-right:0;
+                    }
+                }
+                .logo-eduwill{
+                    margin-top:.8rem;
+                    margin-right:1rem;
+                    & > a{
+                        width:6.4rem;
+                        height:2.7rem;
+                        @extend %background-reset;
+                        background-image:url("https://img.eduwill.net/Img2/Common/BI/type2/live/logo.svg");
+                        border-right:0;
+                    }
+                }
+                .item-online{
+                    border-left:1px solid $color-grey-e9;
+                    .item-layer{
+                        top:100%;
+                        width:68rem;
+                        .item-box{
+                            @include col-group2();
+                            .col{
+                                padding-left:2rem;
+                                min-height:45rem;
+                                border-left:1px solid #ececf1;
+                            }
+                            .col:first-of-type{
+                                padding:0;
+                                width:50%;
+                                border:0;
+                                dl{
+                                    ul{
+                                        column-count: 2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+               .item-online,.item-academy{
+                   & > a{
+                       padding-right:3rem;
+                       &:after{
+                          @extend %header-arrow-bottom;
+                      } 
+                      &.on{
+                          background:$color-white;
+                          &:before{
+                              content:'';
+                              position: absolute;
+                              left:0;
+                              bottom:-1px;
+                              width:100%;
+                              height:1px;
+                              background:$color-white;
+                              z-index: 4;
+                          }
+                      }
+                   }
+               }
+               .item-academy{
+                   .item-layer{
+                       top:100%;
+                       width:52rem;
+                       .item-box{
+                            @include col-group4();
+                            .col{
+                                padding-left:2rem;
+                                min-height:50rem;
+                                border-left:1px solid #ececf1;
+                            }
+                            .col:first-of-type{
+                                padding:0;
+                                border:0;
+                            }
+                       }
+                   }
+               }
+               .welcome{
+                    & > a{
+                        padding-right:3rem;
+                        &:after{
+                            content:'?';
+                            margin-left:.5rem;
+                            width:1.6rem;
+                            height:1.6rem;
+                            background-color:$color-black9;
+                            color:$color-white;
+                            border-radius: 50%;
+                            text-align: center;
+                            font-size:1.3rem;
+                        }
+                    }
+               }
+            }
+
+            /* 로그인,무료회원가입, 나의강의실,즐겨찾기,검색 */
+            &-util{
+                float: right;
+                .item{
+                    // position: relative;
+                    & > a{
+                        padding:.7rem;
+                    }
+                    & > .icon{
+                        position: absolute;
+                        top:2.7rem;
+                        left:50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                .item-join{
+                    position: relative;
+                }
+                .item-myroom{
+                    span{
+                        display: block;
+                        padding:.6rem .7rem;
+                        background: $color-yellow;
+                        border-radius: 2.5rem;
+                    }
+                }
+                .item-search{
+                    margin-left:2rem;
+                    position: relative;
+                    .item-search-toggle{
+                        width:5.2rem;
+                        height:2.5rem;
+                        background-image: url("https://img.eduwill.net/eduwill/img/2021/0/main/210127/icon_search_open.png");
+                        &.on{
+                            background-image: url("https://img.eduwill.net/eduwill/img/2021/0/main/210127/icon_search_close.png");
+                        }
+                    }
+                    .item-layer-menu{
+                        margin-top:5px;
+                        right:0;
+                        width:35rem;
+                        .search-area{
+                            display: flex;
+                            position: relative;
+                            padding:0 1rem;
+                            background:#f4f4f4;
+                           &-input{
+                               width:100%;
+                               height:4.6rem;
+                               line-height: 4.6rem;
+                               background:none;
+                               border:0;
+                               border-bottom:2px solid #111;
+                               font-size:1.5rem;
+                               color:#848b94;
+                           }
+                           &-btn{
+                               position: absolute;
+                               right:1rem;
+                               top:1rem;
+                               width:2rem;
+                               height:2rem;
+                               background-image: url("https://img.eduwill.net/eduwill/img/2021/0/main/210127/icon_search.png");
+                               @extend %background-reset;
+                               @extend %hdtxt;
+                               z-index: 5;
+                           }
+                        }
+                        @include appservice(100%,$color-white);
+                        
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    /* header-wrap */
+    &-wrap{
+        width:100%;
+        text-align: center;
+        .header-title{
+            padding:1.4rem 0;
+            .logo-title{
+                display: inline-block;
+                font-family: "EduwillPassBold", "Noto Sans KR", "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", "Dotum", "돋움", "Gulim", "굴림", "굴림체", Sans-Serif;
+                font-size:2.7rem;
+                font-weight:700;
+                color:$color-black;
+            }
+        }
+    }
+
+    /* header-nav */
+    &-nav{
+        width:100%;
+        border-top:1px solid $color-grey-e9;
+        border-bottom:1px solid $color-grey-e9;
+        &-inner{
+           margin: 0 auto;
+           width: 128rem;
+        }
+    }
+    #gnb{
+        a:hover,a:focus,a.on{
+            transition: all .3s;
+            color:$color-blue-gnb;
+        }
+        &>ul{
+            @include clearfix();
+            &>li{
+                float: left;
+                position: relative;
+                width: 11.11%;
+                text-align: center;
+                &>a{
+                 display: inline-block;
+                 padding:1.5rem 2.5rem;
+                 font-size:1.7rem;
+                 font-weight: 500;
+                 color:$color-black2;
+                
+                 &.blank{
+                     padding-right:3rem;
+                    @include content-after();
+                    &:after{
+                        width:2.5rem;
+                        height:2.5rem;
+                        background: url("https://img.eduwill.net/eduwill/img/2021/0/main/210127/icon_blank.png") no-repeat center;
+                    }
+                 }
+                }
+                .item-layer-menu{
+                    left:50%;
+                    transform: translateX(-50%);
+                    width: max-content;
+                    min-width:100%;
+                }
+                &>.icon{
+                    position: absolute;   
+                    top:-1rem;
+                    left:50%;
+                    transform: translateX(-50%);
+                    z-index: 1;
+                    &.icon-sale15{
+                        padding:.4rem .6rem;
+                        background: $color-white;
+                        line-height: 1;
+                        border:1px solid $color-red2 ;
+                        border-radius: 1rem;
+                        color:$color-red2;
+                        font-size:1rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

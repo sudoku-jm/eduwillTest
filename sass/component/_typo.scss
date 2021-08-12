@@ -1,0 +1,44 @@
+
+//메인 타이틀 스타일
+.content-area-title{
+    color:$color-black2;
+    &.txt-light{
+      color:$color-white;
+      .txt{
+        color:$color-white;
+      }
+    }
+    &.txt-center{
+      text-align: center;
+    }
+    &.txt-left{
+      text-align: left;
+    }
+    .txt{
+      color:$color-black9;
+      em{
+        padding-left:1rem;
+      }
+    }
+    .sub{
+      margin-top:3rem;
+      line-height:1.3;
+      font-size:2.4rem;
+      font-weight:500;
+      letter-spacing: -.3rem;
+    }
+    
+  
+    &.title-level1{
+      @include title-level(level1);
+    }
+    
+    &.title-level2{
+      @include title-level(level2);
+    }
+    
+    &.title-level3{
+      @include title-level(level3);
+    }
+  
+  }

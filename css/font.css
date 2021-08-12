@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* 
+    Noto Sans KR 
+    font-family: 'Noto Sans KR', sans-serif; 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+/* 
+    Roboto
+    font-family: 'Roboto', sans-serif;    
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* 
+    에듀윌 전용 서체
+*/
+@font-face {
+  font-family: 'EduwillBetaRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://contents.eduwill.net/font/EduwillBetaRegular.eot");
+  /* IE9 Compat Modes */
+  src: local("EduwillBetaRegular"), local("EduwillBetaRegular"), url("https://contents.eduwill.net/font/EduwillBetaRegular.eot?#iefix") format("embedded-opentype"), url("https://contents.eduwill.net/font/eduwillpass_tregular.woff2") format("woff2"), url("https://contents.eduwill.net/font/eduwillpass_tregular.woff") format("woff"), url("https://contents.eduwill.net/font/EduwillBetaRegular.ttf") format("opentype"), url("https://contents.eduwill.net/font/EduwillBetaRegular.svg#EduwillBetaRegular") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'EduwillBetaBold';
+  font-style: bold;
+  font-weight: 700;
+  src: url("https://contents.eduwill.net/font/EduwillBetaBold.eot");
+  /* IE9 Compat Modes */
+  src: local("EduwillBetaBold"), local("EduwillBetaBold"), url("https://contents.eduwill.net/font/EduwillBetaBold.eot?#iefix") format("embedded-opentype"), url("https://contents.eduwill.net/font/eduwillpass_tbold.woff2") format("woff2"), url("https://contents.eduwill.net/font/eduwillpass_tbold.woff") format("woff"), url("https://contents.eduwill.net/font/EduwillBetaBold.ttf") format("opentype"), url("https://contents.eduwill.net/font/EduwillBetaBold.svg#EduwillBetaBold") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'EduwillPassBold';
+  font-style: bold;
+  font-weight: 700;
+  src: url("https://contents.eduwill.net/font/EduwillPassBold.eot");
+  /* IE9 Compat Modes */
+  src: local("EduwillBetaBold"), local("EduwillBetaBold"), url("https://contents.eduwill.net/font/EduwillPassBold.eot?#iefix") format("embedded-opentype"), url("https://contents.eduwill.net/font/EduwillPassBold.woff2") format("woff2"), url("https://contents.eduwill.net/font/EduwillPassBold.woff") format("woff"), url("https://contents.eduwill.net/font/EduwillBetaBold.ttf") format("opentype"), url("https://contents.eduwill.net/font/EduwillPassBold.svg#EduwillPassBold") format("svg");
+  /* Legacy iOS */
+}
+/*# sourceMappingURL=font.css.map */
